@@ -712,7 +712,6 @@ function xmltes(sura_num){
             $( deferred.resolve );
 	})
     ).done(function(){
-
 	parser = new DOMParser();
 	$xml = $( $.parseXML( data ) );
 	total_char_count_in_quran = $xml.find('frequency').attr('total_char_count_in_quran')
@@ -788,6 +787,8 @@ function xmltes(sura_num){
 			group_ = new char(group_name,group_count,group_tashkeel)
 			groups.push(group_)
 		    })
+		    console.log(system)
+		    console.log(groups)
 		    system_ = new system(groups)
 		    systems.push(system_)
 		})
