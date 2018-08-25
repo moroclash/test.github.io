@@ -690,10 +690,10 @@ function pre_xmltes()
 
 function xmltes(sura_num){
     $.when(
-	//$.getScript( "../Quran-content/"+sura_num+".js" ),
-	//$.Deferred(function( deferred ){
-        //    $( deferred.resolve );
-	//})
+	$.getScript( "../Quran-content/"+sura_num+".js" ),
+	$.Deferred(function( deferred ){
+            $( deferred.resolve );
+	})
     ).done(function(){
 
 	parser = new DOMParser();
