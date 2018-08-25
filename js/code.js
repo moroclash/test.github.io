@@ -690,7 +690,7 @@ function pre_xmltes()
 
 function xmltes(sura_num){
     $.when(
-	$.getScript( "../Quran-content/"+sura_num+".js" ),
+	$.getScript( "https://moroclash.github.io/test.github.io/Quran-content/"+sura_num+".js" ),
 	$.Deferred(function( deferred ){
             $( deferred.resolve );
 	})
