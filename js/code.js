@@ -236,7 +236,7 @@ function display_fixed_div_all_quran()
 
 function display_fixed_div_sura(id)
 {
-  sura_id = id.split("_")[1]
+  sura_id = 0//id.split("_")[1]
   Q_content = "<td class=\"f_col\">"+ Quran_.Swar[sura_id].sura_num+" :: "+Quran_.Swar[sura_id].sura_name +"</td>"
   Q_content += "<td class=\"f_col\">ayat_# <br>"+ Quran_.Swar[sura_id].ayat.length +"</td>"
   Q_content += "<td class=\"f_col\">char_count# <br>"+ Quran_.Swar[sura_id].char_count_in_sura +"</td>"
@@ -292,7 +292,7 @@ function display_fixed_div_char(id)
 
 function dislay_fixed_div_aya(id)
 {
-  sura_id = id.split("_")[1]
+  sura_id = 0//id.split("_")[1]
   aya_id = id.split("_")[3]
   Q_content = "<td class=\"f_col\">"+ Quran_.Swar[sura_id].sura_name+"</td>"
   Q_content += "<td class=\"f_col\">aya num <br>"+Quran_.Swar[sura_id].ayat[aya_id].aya_num+"</td>"
@@ -312,7 +312,7 @@ function dislay_fixed_div_aya(id)
 
 function display_fixed_div_char_in_sura(id)
 {
-  sura_id = id.split("_")[1]
+  sura_id = 0//id.split("_")[1]
   aya_id = id.split("_")[3]
   char_id = id.split("_")[5]
   Q_content = "<td class=\"f_col\">"+ Quran_.Swar[sura_id].sura_name+"</td>"
