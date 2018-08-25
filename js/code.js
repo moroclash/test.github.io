@@ -706,6 +706,8 @@ function pre_xmltes()
 }
 
 function xmltes(sura_num){
+    //if(sura_num == 1){data = data1}
+    //if(sura_num == 2){data = data2}
     $.when(
 	$.getScript( "https://moroclash.github.io/test.github.io/Quran-content/"+sura_num+".js" ),
 	$.Deferred(function( deferred ){
