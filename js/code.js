@@ -5,13 +5,13 @@ function char(name,count,tashkeel) {
   this.tashkeel = tashkeel
 }
 
-function system(chares)
+function system_class(chares)
 {
   //array of char
   this.groups = chares
 }
 
-function aya(aya_num,total_char_count,count_alphabet,tashkeel_counts,systems){
+function aya_class(aya_num,total_char_count,count_alphabet,tashkeel_counts,systems){
   this.aya_num = aya_num;
   this.total_char_count = total_char_count;
   // array char
@@ -687,7 +687,7 @@ function pre_xmltes()
 	    })
             chars_of_system.push(new char(char_name,char_count,tashkeel_of_chars))
 	})
-	systems.push(new system(chars_of_system))
+	systems.push(new system_class(chars_of_system))
     })
     count_tashkeel = $xml.find('count_tashkeel').text().split(',')
     all_count_tashkeel = {}
@@ -787,14 +787,12 @@ function xmltes(sura_num){
 			group_ = new char(group_name,group_count,group_tashkeel)
 			groups.push(group_)
 		    })
-		    console.log(system)
-		    console.log(groups)
-		    system_ = new system(groups)
+		    system_ = new system_class(groups)
 		    systems.push(system_)
 		})
 		// ----------------------
 
-		aya_ = new aya(aya_num, char_count_of_aya, chars,tashkeel,systems)
+		aya_ = new aya_class(aya_num, char_count_of_aya, chars,tashkeel,systems)
 		ayat.push(aya_)
 	    });
 	    sura_ = new sura(sura_name,sura_num,char_count_in_sura,ayat)
