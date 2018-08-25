@@ -452,6 +452,24 @@ var main = function(){
     sura_num_to_remove_from_top = 0
     main()
   });
+
+
+   $('.select-sura').on('change', function (e) {
+       current_sura = $("select")[1].selectedIndex;
+       // to make dinamic rendering
+       start_with_ayat_num = 13
+       end_render = 0
+       step_render = 4
+       curent_sura_num = 0
+       num_of_steps_down = 0
+       num_of_steps_up = 0
+       the_end_of_ayat = false;
+       the_begin_of_ayat = true;
+       lastScrollTop = 0
+       ayat_in_table = start_with_ayat_num
+       sura_num_to_remove_from_top = 0
+       xmltes(current_sura)
+  });
 };
 
 
@@ -684,7 +702,6 @@ function pre_xmltes()
 					   total_char_count_in_quran,
 					   swar_num,
 					   ayat_num)
-    //main()
     xmltes(1)
 }
 
@@ -784,6 +801,7 @@ function xmltes(sura_num){
 	});
 	Quran_ = new Quran(total_char_count_in_quran,swar);
 	var t0 = performance.now();
+	current_sura = sura_num
 	main()
 	var t1 = performance.now();
 	console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
