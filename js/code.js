@@ -127,22 +127,15 @@ function generat_head_cell(text,class_s,data_column,id){
 
 
 function show_all_info_mode(){
-    aya_id = 0
-    aya_num = 1
-    sura_id = 1
-    sura_name = "all"
     //sura cell
-    table_content = "<tr id=\""+aya_id+"\" class=\"aya"+aya_num+" hov_cell aya\"><td>All</td></tr>"
-    all_body = "<td id=\""+sura_id+"\" class=\"column100 column1 hov_cell "+sura_name+" char_cell\" data-column=\"column1\"><table class=\""+sura_name+"_table aya\">"+table_content+"</table></td>"
-
+    table_content = "<tr id=\"total_ayat_info\" class=\"all_aya hov_cell aya all_aya_0\"><td>All</td></tr>"
+    all_body = "<td id=\"total_ayat_info\" class=\"column100 column1 hov_cell char_cell\" data-column=\"column1\"><table class=\"all_table aya\">"+table_content+"</table></td>"
     
     //aya cell
-    aya_id = sura_id+"_aya_"+0
-    table_content = "<tr id=\""+aya_id+"\" class=\"aya"+aya_num+" hov_cell aya\"><td>All</td></tr>"
-    ayat_small_table = "<table class=\""+sura_name+"_table aya\">"+table_content+"</table>"
-    all_body += "<td class=\"column100 column2 "+sura_name+" char_cell\" data-column=\"column2\">"+ayat_small_table+"</td>"
+    table_content = "<tr id=\"all_aya\" class=\"aya1 hov_cell aya\"><td>All</td></tr>"
+    ayat_small_table = "<table class=\"all_table aya\">"+table_content+"</table>"
+    all_body += "<td class=\"column100 column2 char_cell\" data-column=\"column2\">"+ayat_small_table+"</td>"
 
-    
     //char cell's
     system = get_current_system()
     for(j = 0; j < system.length; j++){
@@ -155,13 +148,12 @@ function show_all_info_mode(){
           tashkeel_counts+="<td class=\"column100\">"+tashkeel_dictionary[tshkl]+"</td>"
         }
         char_content = "<tr>"+tashkeel_cahars+"</tr>"+"<tr>"+tashkeel_counts+"</tr>"
-	table_char_id = sura_id+"_aya_0_char_"+j
-	table_chars_content = "<table id=\""+table_char_id+"\" class=\"char_counts_table table_char "+sura_id+"_aya_0 clicked"+j+"\">"+char_content+"</table>"
-        table_content = "<tr class=\"aya"+aya_num+"\"><td>"+table_chars_content+"</td></tr>"
-	alphabet_content = "<table class=\""+sura_name+"_table\">"+table_content+"</table>"
-	all_body += "<td class=\"column100 column"+(j+3)+" "+sura_name+" char_cell\" data-column=\"column"+(j+3)+"\">"+alphabet_content+"</td>"
+        table_char_id = "char_"+j
+        table_chars_content = "<table id=\""+table_char_id+"\" class=\"char_counts_table table_char all_aya clicked"+j+"\">"+char_content+"</table>"
+        table_content = "<tr class=\"all_aya_0\"><td>"+table_chars_content+"</td></tr>"
+	alphabet_content = "<table class=\"all_table\">"+table_content+"</table>"
+	all_body += "<td class=\"column100 column"+(j+3)+" char_cell\" data-column=\"column"+(j+3)+"\">"+alphabet_content+"</td>"
     }
-    
     //merge all html
     sura_html = "<tr class=\"row100 all\">" +all_body+ "</tr>"
     return sura_html
