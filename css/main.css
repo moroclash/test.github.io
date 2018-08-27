@@ -6,13 +6,14 @@
 
 @font-face {
   font-family: Montserrat-Regular;
-  src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+  src: url('../fonts/Amiri.ttf');
 }
 
 @font-face {
-  font-family: Montserrat-Medium;
-  src: url('../fonts/montserrat/Montserrat-Medium.ttf');
+    font-family: Montserrat-Medium;
+    src: url('../fonts/Amiri.ttf');
 }
+
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -97,7 +98,7 @@ iframe {
 .limiter {
   width: 100%;
   margin: 0 auto;
-  height: 66%;
+  height: 63%;
   /* position: absolute; */
   /* margin-bottom: 14%; */
 }
@@ -218,6 +219,7 @@ th, td {
 .All_Quran_info .f_col{
    width: 12%;
    font-size: 26px;
+   font-family: Montserrat-Regular ;
 }
 
 .m-b-110 {
@@ -284,7 +286,7 @@ th, td {
 
 .table100.ver2 th {
   font-family: Montserrat-Medium;
-  font-size: 12px;
+  font-size: 20px;
   text-align: center;
   color: #fff;
   line-height: 1.4;
@@ -327,7 +329,7 @@ th, td {
 
 .table100.ver2 th {
   font-family: Montserrat-Medium;
-  font-size: 12px;
+  font-size: 20px;
   color: #fff;
   line-height: 1.4;
   text-transform: uppercase;
@@ -553,9 +555,24 @@ th, td {
 
 .pre-head h6 select
 {
-  width: auto;
+    width: auto;
+    font-family: Montserrat-Regular;
+    font-size:17px;
+    height: 29px;
 }
 
 /* .table100.ver6 .row100 td:hover {
   background-color: rgba(255,255,255,0.2);
 } */
+
+#tashkeel_for_fixed_dev
+{
+    font-size: 30px;
+}
+
+#tashkeel_counts_for_fixed_dev
+{
+    font-size: 15px;
+}
+
+
