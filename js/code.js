@@ -565,9 +565,9 @@ var main = function(){
 
 
 // to make dinamic rendering
-start_with_ayat_num = 19
+start_with_ayat_num = 15
 end_render = 0
-step_render = 8
+step_render = 5
 curent_sura_num = 0
 num_of_steps_down = 0
 num_of_steps_up = 0
@@ -632,7 +632,7 @@ $(document).ready(function() {
            check_if_append_nodes_down = true;
          }
          // check if append nodes down to remove some nodes from top
-         if(check_if_append_nodes_down && ayat_in_table >= 16+step_render){
+         if(check_if_append_nodes_down && ayat_in_table >= 25+step_render){
            children_nodes = $(".column"+(1)).find("."+Quran_.Swar[sura_num_to_remove_from_top].sura_name+"_table").children('tbody').children('tr')
            if (children_nodes.length > step_render){
                for (i=0; i< (Quran_.systems_info[current_system]+2); i++){
@@ -661,7 +661,7 @@ $(document).ready(function() {
          scroll_down_done = true;
        }
      // check if scroll up
-    } else if((st < 70 && !all_info_mode) || (st - lastScrollTop < 0 && st < 70 && scroll_down_done && !all_info_mode)){
+    } else if((st < 90 && !all_info_mode) || (st - lastScrollTop < 0 && st < 90 && scroll_down_done && !all_info_mode)){
          children_nodes = $(".column"+(1)).find("."+Quran_.Swar[sura_num_to_remove_from_top].sura_name+"_table").children('tbody').children('tr')
          first_aya = (parseInt(children_nodes.slice(0,1).attr('id').split("_")[3])+1);
          if (!the_begin_of_ayat){
