@@ -120,9 +120,23 @@ addition_coulme = "aya_num"
 
 
 
-function generat_head_cell(text,class_s,data_column,id){
-  // console.log();
-    return "<th id=\""+id+"\" class=\""+class_s+" hov_cell\" data-column=\""+data_column+"\">"+text+"</th>"
+function generat_head_cell(text,class_s,data_column,id,tashkeel_flage){
+    // console.log();
+    if(tashkeel_flage)
+    {
+	tashkeel_cahars = ""
+	tashkeel_dictionary = All_Quran_info_.systems[current_system].groups[0].tashkeel
+        for(var tshkl in tashkeel_dictionary){
+          // console.log(tashkeel_dictionary)
+          tashkeel_cahars+="<th id=\""+id+"\" class=\"column100\">"+tshkl+"</th>"
+        }
+        char_content = "<tr class=\"hov_cell\">"+tashkeel_cahars+"</tr>"
+        table_content = "<table>"+char_content+"</table>"
+	
+	content = "<table><tr><th class=\"column100\">"+text+"</th></tr><tr><th>"+table_content+"</th></tr></table>"
+	return "<th id=\""+id+"\" class=\""+class_s+" table_char  no_pading stickyheader hov_cell\" data-column=\""+data_column+"\">"+content+"</th>"
+    }
+    return "<th id=\""+id+"\" class=\""+class_s+" stickyheader hov_cell\" data-column=\""+data_column+"\">"+text+"</th>"
 }
 
 
@@ -144,10 +158,11 @@ function show_all_info_mode(){
         tashkeel_dictionary = All_Quran_info_.systems[current_system].groups[j].tashkeel
         for(var tshkl in tashkeel_dictionary){
           // console.log(tashkeel_dictionary)
-          tashkeel_cahars+="<td id=\"tashkeel_shape\" class=\"column100\">"+tshkl+"</td>"
+          //tashkeel_cahars+="<td id=\"tashkeel_shape\" class=\"column100\">"+tshkl+"</td>"
           tashkeel_counts+="<td id=\"tashkeel_shape_count\" class=\"column100\">"+tashkeel_dictionary[tshkl]+"</td>"
         }
-        char_content = "<tr>"+tashkeel_cahars+"</tr>"+"<tr>"+tashkeel_counts+"</tr>"
+	//char_content = "<tr>"+tashkeel_cahars+"</tr>"+"<tr>"+tashkeel_counts+"</tr>"
+        char_content = "<tr>"+tashkeel_counts+"</tr>"
         table_char_id = "char_"+j
         table_chars_content = "<table id=\""+table_char_id+"\" class=\"char_counts_table table_char all_aya clicked"+j+"\">"+char_content+"</table>"
         table_content = "<tr class=\"all_aya_0\"><td>"+table_chars_content+"</td></tr>"
@@ -202,10 +217,11 @@ function generat_sura_row(sura_info,start_pos,end_pos){
         tashkeel_dictionary = aya.systems[current_system].groups[j].tashkeel
         for(var tshkl in tashkeel_dictionary){
           // console.log(tashkeel_dictionary)
-          tashkeel_cahars+="<td id=\"tashkeel_shape\" class=\"column100\">"+tshkl+"</td>"
+          //tashkeel_cahars+="<td id=\"tashkeel_shape\" class=\"column100\">"+tshkl+"</td>"
           tashkeel_counts+="<td id=\"tashkeel_shape_count\" class=\"column100\">"+tashkeel_dictionary[tshkl]+"</td>"
         }
-        char_content = "<tr>"+tashkeel_cahars+"</tr>"+"<tr>"+tashkeel_counts+"</tr>"
+          //char_content = "<tr>"+tashkeel_cahars+"</tr>"+"<tr>"+tashkeel_counts+"</tr>"
+	char_content = "<tr>"+tashkeel_counts+"</tr>"
         table_char_id = sura_id+"_aya_"+n+"_char_"+j
         table_chars_content = "<table id=\""+table_char_id+"\" class=\"char_counts_table table_char "+sura_id+"_aya_"+n+" clicked"+j+"\">"+char_content+"</table>"
         table_content += "<tr class=\"aya"+aya.aya_num+"\"><td>"+table_chars_content+"</td></tr>"
@@ -461,12 +477,12 @@ var main = function(){
     $( ".swar" ).empty();
     $('.pre-head').append(genrate_List(All_Quran_info_.systems_info, "Systems", "select-system", current_system));
     $('.pre-head').append(genrate_List(All_Quran_info_.swar_names, "Swar", "select-sura", current_sura))
-    $('.head').append(generat_head_cell("sura name","column100 column1","column1","total_Quran_info"));
-    $('.head').append(generat_head_cell("aya num","column100 column2","column2","total_ayat_info"));
+    $('.head').append(generat_head_cell("sura name","column100 column1","column1","total_Quran_info",false));
+    $('.head').append(generat_head_cell("aya num","column100 column2","column2","total_ayat_info",false));
     var start = 3
     system = get_current_system()
     for (i = 0; i < system.length ; i++) {
-	$('.head').append(generat_head_cell(system[i].name,"column100 column"+(i+start),'column'+(i+start),"char_"+i));
+	$('.head').append(generat_head_cell(system[i].name,"column100 column"+(i+start),'column'+(i+start),"char_"+i,true));
     }
 
     if(current_sura != 0){
