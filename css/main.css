@@ -155,10 +155,10 @@ th, td {
   /* padding-left: 42px; */
 }
 
-.row100.head th {
+/*.row100.head th {
   padding-top: 24px;
   padding-bottom: 20px;
-}
+}*/
 
 .row100 td {
   padding-top: 0px;
@@ -279,9 +279,10 @@ th, td {
 [ Ver2 ]*/
 .table100.ver2 td {
   font-family: Montserrat-Regular;
-  font-size: 14px;
+  font-size: 18px;
   color: #808080;
-  line-height: 1.4;
+  /*line-height: 1.4;*/
+  height: 31px;
 }
 
 .table100.ver2 th {
@@ -321,10 +322,11 @@ th, td {
 }
 
 .table100.ver2 td {
-  font-family: Montserrat-Regular;
-  font-size: 14px;
-  color: #808080;
-  line-height: 1.4;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: #808080;
+    /*line-height: 1.4;*/
+    height: 31px;
 }
 
 .table100.ver2 th {
@@ -576,3 +578,14 @@ th, td {
 }
 
 
+.no_pading
+{
+    padding: 0px;
+}
+
+.stickyheader
+{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
