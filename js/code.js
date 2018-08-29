@@ -126,14 +126,20 @@ function generat_head_cell(text,class_s,data_column,id,tashkeel_flage){
     {
 	tashkeel_cahars = ""
 	tashkeel_dictionary = All_Quran_info_.systems[current_system].groups[0].tashkeel
+	coun = 1
         for(var tshkl in tashkeel_dictionary){
-          // console.log(tashkeel_dictionary)
-          tashkeel_cahars+="<th id=\""+id+"\" class=\"column100\">"+tshkl+"</th>"
+            // console.log(tashkeel_dictionary)
+	    if(tshkl != 'no'){
+		tshkl = "<img class=\"taskeel-images\" src=\'./images/"+coun+".png\'/>"
+		tashkeel_cahars+="<th id=\"small-tashkeel-text\" class=\"column100\">"+tshkl+"</th>"
+		coun++
+	    }
+	    else tashkeel_cahars+="<th id=\"small-tashkeel-text\" class=\"column100\">"+tshkl+"</th>"
         }
         char_content = "<tr class=\"hov_cell\">"+tashkeel_cahars+"</tr>"
         table_content = "<table>"+char_content+"</table>"
 	
-	content = "<table><tr><th class=\"column100\">"+text+"</th></tr><tr><th>"+table_content+"</th></tr></table>"
+	content = "<table><tr><th id=\"character-text\" class=\"column100\">"+text+"</th></tr><tr><th id=\"dicritics-text\">"+table_content+"</th></tr></table>"
 	return "<th id=\""+id+"\" class=\""+class_s+" table_char  no_pading stickyheader hov_cell\" data-column=\""+data_column+"\">"+content+"</th>"
     }
     return "<th id=\""+id+"\" class=\""+class_s+" stickyheader hov_cell\" data-column=\""+data_column+"\">"+text+"</th>"
@@ -447,6 +453,7 @@ function display_content_of_fixed_div(id)
             char_id = id.split("_")[1]
             $(".clicked"+char_id).addClass('click_class');
             content = display_fixed_div_char(id)
+	    
 	}
 	$("#fixed_div").append(content)
     }

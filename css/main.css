@@ -189,10 +189,20 @@ th, td {
   color: #fff;
  }
 
+.table_char:hover .taskeel-images{
+  background-color: #809fff;
+  color: #fff;
+ }
+
+
 .click_class , .click_class *{
    background-color: #809fff;
    color: #fff;
-  }
+}
+
+.click_class , .click_class .taskeel-images{
+   background-color: #333333;
+}
 
 
 #fixed_div {
@@ -588,4 +598,36 @@ th, td {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+}
+
+
+#small-tashkeel-text
+{
+    padding-left: 19px;
+}
+
+#character-text
+{
+    font-size:45px;
+    padding-top: 5px;
+}
+
+#dicritics-text
+{
+
+}
+
+#hed-with-padding
+{
+    padding-top: 76px;
+}
+
+.taskeel-images{
+    width: 20px;
+    height: 46px;
+}
+
+.dont-change-background
+{
+    background-color: #333333;
 }
