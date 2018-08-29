@@ -457,7 +457,7 @@ var main = function(){
     $( ".swar" ).empty();
     $('.pre-head').append(genrate_List(All_Quran_info_.systems_info, "Systems", "select-system", current_system));
     $('.pre-head').append(genrate_List(All_Quran_info_.swar_names, "Swar", "select-sura", current_sura))
-    $('.head').append(generat_head_cell("أسم السورة","column100 column1","column1","total_Quran_info",false));
+    $('.head').append(generat_head_cell("اسم السورة","column100 column1","column1","total_Quran_info",false));
     $('.head').append(generat_head_cell("رقم الآية","column100 column2","column2","total_ayat_info",false));
     var start = 3
     system = get_current_system()
