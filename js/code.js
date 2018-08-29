@@ -289,7 +289,7 @@ function get_fixed_div_tashkeel_part(__tashkeel)
 function display_fixed_div_all_quran()
 {
     Q_content = "<td class=\"f_col\">عدد السور<br>"+ All_Quran_info_.swar_num +"</td>"
-    Q_content += "<td class=\"f_col\">عدد الايات<br>"+ All_Quran_info_.ayat_num +"</td>"
+    Q_content += "<td class=\"f_col\">عدد الآيات<br>"+ All_Quran_info_.ayat_num +"</td>"
     Q_content += "<td class=\"f_col\">عدد الحروف<br>"+ All_Quran_info_.total_char_count_in_quran +"</td>"
     tash = get_fixed_div_tashkeel_part(All_Quran_info_.tashkeels)
     Q_content += "<td><table><tr>"+tash[0]+"</tr><tr>"+tash[1]+"</tr></table></td>"
@@ -301,7 +301,7 @@ function display_fixed_div_sura(id)
 {
     sura_id = 0//id.split("_")[1]
     Q_content = "<td class=\"f_col\">"+ Quran_.Swar[sura_id].sura_num+" :: "+Quran_.Swar[sura_id].sura_name +"</td>"
-    Q_content += "<td class=\"f_col\"> عدد الايات<br>"+ Quran_.Swar[sura_id].ayat.length +"</td>"
+    Q_content += "<td class=\"f_col\">عدد الآيات<br>"+ Quran_.Swar[sura_id].ayat.length +"</td>"
     Q_content += "<td class=\"f_col\">عدد الحروف<br>"+ Quran_.Swar[sura_id].char_count_in_sura +"</td>"
     sura_tashkell_count = {}
     for( i = 0; i < Quran_.Swar[sura_id].ayat.length; i++)
@@ -359,8 +359,8 @@ function display_fixed_div_char_in_sura(id)
     aya_id = id.split("_")[3]
     char_id = id.split("_")[5]
     Q_content = "<td class=\"f_col\">"+ Quran_.Swar[sura_id].sura_name+"</td>"
-    Q_content += "<td class=\"f_col\">رقم الايه<br>"+Quran_.Swar[sura_id].ayat[aya_id].aya_num+"</td>"
-    Q_content += "<td class=\"f_col\"> عدد الحروف<br>"+get_current_system()[char_id].name+" : "+Quran_.Swar[sura_id].ayat[aya_id].systems[current_system].groups[char_id].count+"</td>"
+    Q_content += "<td class=\"f_col\">رقم الآية<br>"+Quran_.Swar[sura_id].ayat[aya_id].aya_num+"</td>"
+    Q_content += "<td class=\"f_col\">عدد الحروف<br>"+get_current_system()[char_id].name+" : "+Quran_.Swar[sura_id].ayat[aya_id].systems[current_system].groups[char_id].count+"</td>"
     tash = get_fixed_div_tashkeel_part(Quran_.Swar[sura_id].ayat[aya_id].systems[current_system].groups[char_id].tashkeel)
     Q_content += "<td><table><tr>"+tash[0]+"</tr><tr>"+tash[1]+"</tr></table></td>"
     return "<table class=\"All_Quran_info\"><tr>"+Q_content+"</tr></table>"
@@ -388,7 +388,7 @@ function display_content_of_fixed_div(id)
 	}else if( char_test.test(id) ){
 	    char_id = id.split("_")[1]
 	    Q_content = "<td class=\"f_col\">"+ get_current_system()[char_id].name +"</td>"
-	    Q_content += "<td class=\"f_col\"> عدد الحروف<br>"+All_Quran_info_.systems[current_system].groups[char_id].count+"</td>"
+	    Q_content += "<td class=\"f_col\">عدد الحروف<br>"+All_Quran_info_.systems[current_system].groups[char_id].count+"</td>"
 	    tash = get_fixed_div_tashkeel_part(All_Quran_info_.systems[current_system].groups[char_id].tashkeel)
 	    Q_content += "<td><table><tr>"+tash[0]+"</tr><tr>"+tash[1]+"</tr></table></td>"
 	    content = "<table class=\"All_Quran_info\"><tr>"+Q_content+"</tr></table>"
@@ -457,8 +457,8 @@ var main = function(){
     $( ".swar" ).empty();
     $('.pre-head').append(genrate_List(All_Quran_info_.systems_info, "Systems", "select-system", current_system));
     $('.pre-head').append(genrate_List(All_Quran_info_.swar_names, "Swar", "select-sura", current_sura))
-    $('.head').append(generat_head_cell("sura name","column100 column1","column1","total_Quran_info",false));
-    $('.head').append(generat_head_cell("aya num","column100 column2","column2","total_ayat_info",false));
+    $('.head').append(generat_head_cell("أسم السورة","column100 column1","column1","total_Quran_info",false));
+    $('.head').append(generat_head_cell("رقم الآية","column100 column2","column2","total_ayat_info",false));
     var start = 3
     system = get_current_system()
     for (i = 0; i < system.length ; i++) {
