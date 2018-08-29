@@ -129,12 +129,9 @@ function generat_head_cell(text,class_s,data_column,id,tashkeel_flage){
 	coun = 1
         for(var tshkl in tashkeel_dictionary){
             // console.log(tashkeel_dictionary)
-	    if(tshkl != 'no'){
-		tshkl = "<img class=\"taskeel-images\" src=\'./images/"+coun+".png\'/>"
-		tashkeel_cahars+="<th id=\"small-tashkeel-text\" class=\"column100\">"+tshkl+"</th>"
-		coun++
-	    }
-	    else tashkeel_cahars+="<th id=\"small-tashkeel-text\" class=\"column100\">"+tshkl+"</th>"
+	    tshkl = "<img class=\"taskeel-images\" src=\'./images/"+coun+".png\'/>"
+	    tashkeel_cahars+="<th id=\"small-tashkeel-text\" class=\"column100\">"+tshkl+"</th>"
+	    coun++
         }
         char_content = "<tr class=\"hov_cell\">"+tashkeel_cahars+"</tr>"
         table_content = "<table>"+char_content+"</table>"
@@ -280,17 +277,10 @@ function get_fixed_div_tashkeel_part(__tashkeel)
     coun = 1
     for (var tash in __tashkeel)
     {
-	// tashkeel_table += "<h1>"+tash+"  "+Quran_.tashkeel_counts[tash]+"</h1>"
-	if(tash != 'no'){
 	    tshkl = "<img class=\"taskeel-images\" src=\'./images/"+coun+".png\'/>"
 	    tash_shape += "<td id=\"tashkeel_for_fixed_dev\">"+tshkl+"</td>"
 	    tash_count += "<td id=\"tashkeel_counts_for_fixed_dev\">"+__tashkeel[tash]+"</td>"
 	    coun++
-	}
-	else{
-	    tash_shape += "<td id=\"tashkeel_for_fixed_dev\">"+tash+"</td>"
-	    tash_count += "<td id=\"tashkeel_counts_for_fixed_dev\">"+__tashkeel[tash]+"</td>"
-	}
     }
     return [tash_shape,tash_count]
 }
@@ -355,7 +345,7 @@ function dislay_fixed_div_aya(id)
     sura_id = 0//id.split("_")[1]
     aya_id = id.split("_")[3]
     Q_content = "<td class=\"f_col\">"+ Quran_.Swar[sura_id].sura_name+"</td>"
-    Q_content += "<td class=\"f_col\">رقم الايه<br>"+Quran_.Swar[sura_id].ayat[aya_id].aya_num+"</td>"
+    Q_content += "<td class=\"f_col\">رقم الآية<br>"+Quran_.Swar[sura_id].ayat[aya_id].aya_num+"</td>"
     Q_content += "<td class=\"f_col\">عدد الحروف<br>"+Quran_.Swar[sura_id].ayat[aya_id].total_char_count+"</td>"
     tash = get_fixed_div_tashkeel_part(Quran_.Swar[sura_id].ayat[aya_id].tashkeel_counts_for_aya)
     Q_content += "<td><table><tr>"+tash[0]+"</tr><tr>"+tash[1]+"</tr></table></td>"
