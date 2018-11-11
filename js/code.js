@@ -135,7 +135,7 @@ function generat_head_cell(text,class_s,data_column,id,tashkeel_flage){
         }
         char_content = "<tr class=\"hov_cell\">"+tashkeel_cahars+"</tr>"
         table_content = "<table>"+char_content+"</table>"
-	
+
 	content = "<table><tr><th id=\"character-text\" class=\"column100\">"+text+"</th></tr><tr><th id=\"dicritics-text\">"+table_content+"</th></tr></table>"
 	return "<th id=\""+id+"\" class=\""+class_s+" table_char  no_pading stickyheader hov_cell\" data-column=\""+data_column+"\">"+content+"</th>"
     }
@@ -147,7 +147,7 @@ function show_all_info_mode(){
     //sura cell
     table_content = "<tr id=\"total_ayat_info\" class=\"all_aya hov_cell aya all_aya_0\"><td>All</td></tr>"
     all_body = "<td id=\"total_ayat_info\" class=\"column100 column1 hov_cell char_cell\" data-column=\"column1\"><table class=\"all_table aya\">"+table_content+"</table></td>"
-    
+
     //aya cell
     table_content = "<tr id=\"all_aya\" class=\"aya1 hov_cell aya\"><td>All</td></tr>"
     ayat_small_table = "<table class=\"all_table aya\">"+table_content+"</table>"
@@ -377,12 +377,12 @@ function display_content_of_fixed_div(id)
     var aya_test = new RegExp('(sura_[0-9]+)(_aya_)([0-9]+)')
     var char_counts_test = new RegExp('(sura_[0-9]+)(_aya_[0-9]+)(_char_[0-9]+)')
     content = ""
-    
+
     if(all_info_mode)
     {
 	if( id == "total_Quran_info" ||
 	    id == "total_ayat_info"   ||
-	    id == "all_aya") 
+	    id == "all_aya")
 	{
 	    content = display_fixed_div_all_quran()
 	}else if( char_test.test(id) ){
@@ -392,7 +392,7 @@ function display_content_of_fixed_div(id)
 	    tash = get_fixed_div_tashkeel_part(All_Quran_info_.systems[current_system].groups[char_id].tashkeel)
 	    Q_content += "<td><table><tr>"+tash[0]+"</tr><tr>"+tash[1]+"</tr></table></td>"
 	    content = "<table class=\"All_Quran_info\"><tr>"+Q_content+"</tr></table>"
-	    
+
 	}
 	$("#fixed_div").append(content)
     }else{
@@ -426,7 +426,7 @@ function display_content_of_fixed_div(id)
             char_id = id.split("_")[1]
             $(".clicked"+char_id).addClass('click_class');
             content = display_fixed_div_char(id)
-	    
+
 	}
 	$("#fixed_div").append(content)
     }
@@ -446,7 +446,6 @@ function genrate_List(list, name, class_, current)
     content='<h6>'+name+' : <select class=\''+class_+'\'>'+content+'</select></h6>'
     return content
 }
-
 
 
 
@@ -479,7 +478,7 @@ var main = function(){
 		    $('.swar').append(generat_sura_row(Quran_.Swar[i],0,Quran_.Swar[i].ayat.length)[0])
 		    ayat_num_that_visualized += Quran_.Swar[i].ayat.length;
 		    end_render = Quran_.Swar[i].ayat.length
-		    i++; 
+		    i++;
 		}
 		else{
 		    $('.swar').append(generat_sura_row(Quran_.Swar[i], 0, start_with_ayat_num-ayat_num_that_visualized)[0])
@@ -496,8 +495,8 @@ var main = function(){
 	$('.swar').append(show_all_info_mode())
 	all_info_mode = true
     }
-    
-    
+
+
     $('.hov_cell , .table_char , .head.column100').click(function() {
 	console.log($(this))
 	$("*").removeClass('click_class');
@@ -735,7 +734,6 @@ $(document).ready(function() {
 
 
 
-
 function pre_xmltes()
 {
     parser = new DOMParser();
@@ -775,6 +773,8 @@ function pre_xmltes()
 					   ayat_num)
     xmltes(1)
 }
+
+
 
 function xmltes(sura_num){
     //if(sura_num == 1){data = data1}
